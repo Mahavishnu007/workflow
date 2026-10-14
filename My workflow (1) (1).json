@@ -1,0 +1,229 @@
+[
+ {
+  "nodes": "parameters",
+  "Column20": "id",
+  "Column21": "name",
+  "Column22": "type",
+  "Column23": "typeVersion",
+  "Column24": "position",
+  "Column25": "webhookId",
+  "Column26": "credentials",
+  "connections": "Telegram Trigger",
+  "Column32": "Switch",
+  "Column35": "Exploitability Ranker",
+  "Column38": "Deduplicate & Mask IP",
+  "Column41": "Send a text message1",
+  "settings": "executionOrder",
+  "Column44": "binaryMode",
+  "meta": "templateCredsSetupCompleted",
+  "Column47": "instanceId"
+ },
+ {
+  "nodes": "updates",
+  "Column3": "additionalFields",
+  "Column4": "rules",
+  "Column16": "options",
+  "Column17": "chatId",
+  "Column18": "text",
+  "Column19": "jsCode",
+  "Column26": "telegramApi",
+  "connections": "main",
+  "Column32": "main",
+  "Column35": "main",
+  "Column38": "main",
+  "Column41": "main"
+ },
+ {
+  "Column4": "values",
+  "Column26": "id",
+  "Column27": "name",
+  "connections": "node",
+  "Column30": "type",
+  "Column31": "index",
+  "Column32": "node",
+  "Column33": "type",
+  "Column34": "index",
+  "Column35": "node",
+  "Column36": "type",
+  "Column37": "index",
+  "Column38": "node",
+  "Column39": "type",
+  "Column40": "index"
+ },
+ {
+  "Column4": "conditions",
+  "Column14": "renameOutput",
+  "Column15": "outputKey"
+ },
+ {
+  "Column4": "options",
+  "Column8": "conditions",
+  "Column13": "combinator"
+ },
+ {
+  "Column4": "caseSensitive",
+  "Column5": "leftValue",
+  "Column6": "typeValidation",
+  "Column7": "version",
+  "Column8": "leftValue",
+  "Column9": "rightValue",
+  "Column10": "operator",
+  "Column12": "id"
+ },
+ {
+  "Column10": "type",
+  "Column11": "operation"
+ },
+ {
+  "name": "My workflow",
+  "nodes": "message",
+  "Column20": "b1ee7268-8697-4ee4-b214-2c7ec4e66f62",
+  "Column21": "Telegram Trigger",
+  "Column22": "n8n-nodes-base.telegramTrigger",
+  "Column23": 1.5,
+  "Column24": 0,
+  "Column25": "a89f4e96-21b2-49ca-bfbb-4b1d376948f3",
+  "Column26": "khaAdOGaEUoJr8JA",
+  "Column27": "Telegram account",
+  "connections": "Switch",
+  "Column30": "main",
+  "Column31": 0,
+  "Column32": "Send a text message",
+  "Column33": "main",
+  "Column34": 0,
+  "Column35": "Send a text message2",
+  "Column36": "main",
+  "Column37": 0,
+  "Column38": "Exploitability Ranker",
+  "Column39": "main",
+  "Column40": 0,
+  "active": true,
+  "settings": "v1",
+  "Column44": "separate",
+  "versionId": "62e2b7d4-937a-40be-b75b-b843af124540",
+  "meta": true,
+  "Column47": "d8769088c9586c6be282a65b2f8114d61ab899f554f5f3ebffc989d80682dd1c",
+  "id": "iBPFl4yDrrcuYRaM"
+ },
+ {
+  "Column24": 112,
+  "Column32": "Send a text message1",
+  "Column33": "main",
+  "Column34": 0
+ },
+ {
+  "Column4": true,
+  "Column6": "strict",
+  "Column7": 3,
+  "Column8": "={{ $json.message.text }}",
+  "Column9": "/status",
+  "Column10": "string",
+  "Column11": "equals",
+  "Column12": "58e1b337-0f2f-47fc-83e0-7273784f73b7",
+  "Column13": "and",
+  "Column14": true,
+  "Column15": "status",
+  "Column20": "8f2fd372-abb8-4d74-88ee-84a8d016af55",
+  "Column21": "Switch",
+  "Column22": "n8n-nodes-base.switch",
+  "Column23": 3.4,
+  "Column24": 224,
+  "Column32": "Deduplicate & Mask IP",
+  "Column33": "main",
+  "Column34": 0
+ },
+ {
+  "Column4": true,
+  "Column6": "strict",
+  "Column7": 3,
+  "Column8": "={{ $json.message.text }}",
+  "Column9": "^/last\\s+\\d+$",
+  "Column10": "string",
+  "Column11": "regex",
+  "Column12": "f50f86b3-fa38-48d2-8849-80531d59ab87",
+  "Column13": "and",
+  "Column14": true,
+  "Column15": "/last 5",
+  "Column24": 96
+ },
+ {
+  "Column4": true,
+  "Column6": "strict",
+  "Column7": 3,
+  "Column8": "={{ $json.message.text }}",
+  "Column9": "/scan",
+  "Column10": "string",
+  "Column11": "equals",
+  "Column12": "9f03f62e-0221-408a-b148-48e44a795fb5",
+  "Column13": "and",
+  "Column14": true,
+  "Column15": "scan"
+ },
+ {
+  "Column17": "={{ $json.message.chat.id }}",
+  "Column18": "NGP-028 Scan Triage Assistant is online. Send a scan sample to begin.",
+  "Column20": "addf7995-e1cf-406e-9df8-3bfd83e82633",
+  "Column21": "Send a text message",
+  "Column22": "n8n-nodes-base.telegram",
+  "Column23": 1.2,
+  "Column24": 448,
+  "Column25": "863fedc9-e02f-49fb-8732-8949190c9c98",
+  "Column26": "khaAdOGaEUoJr8JA",
+  "Column27": "Telegram account"
+ },
+ {
+  "Column24": 112
+ },
+ {
+  "Column17": "={{ $json.message.chat.id }}",
+  "Column18": "NGP-028: Scan history lookup is not connected yet.",
+  "Column20": "1cda7b92-22dc-4672-ae0e-9a18c62dc5e5",
+  "Column21": "Send a text message1",
+  "Column22": "n8n-nodes-base.telegram",
+  "Column23": 1.2,
+  "Column24": 448,
+  "Column25": "f760ea03-a167-4dc9-9dfb-bffb3898deaf",
+  "Column26": "khaAdOGaEUoJr8JA",
+  "Column27": "Telegram account"
+ },
+ {
+  "Column24": -80
+ },
+ {
+  "Column17": "={{ $(\"Telegram Trigger\").first().json.message.chat.id }}",
+  "Column18": "={{ $json.telegram_text }}",
+  "Column20": "5d868108-b0fa-40ff-875c-a96bac061a9e",
+  "Column21": "Send a text message2",
+  "Column22": "n8n-nodes-base.telegram",
+  "Column23": 1.2,
+  "Column24": 896,
+  "Column25": "74812191-f418-4f12-bda6-ca510f6776db",
+  "Column26": "khaAdOGaEUoJr8JA",
+  "Column27": "Telegram account"
+ },
+ {
+  "Column24": 304
+ },
+ {
+  "Column19": "const input = $json;\nconst findings = input.clean_findings || [];\n\n// 1. Exploitability Scoring Matrix:\n// RCE / Backdoors (100) > Exposed RDP / Unauthenticated (85) > Outdated with CVE (70) > Weak Ciphers (50) > Low / Banner (20)\nfunction scoreExploitability(item) {\n  const text = `${item.finding} ${item.details} ${item.version}`.toLowerCase();\n  if (text.includes('backdoor') || text.includes('vsftpd 2.3.4')) return 100;\n  if (text.includes('arbitrary file') || text.includes('tomcat 8.0')) return 90;\n  if (text.includes('rdp') && text.includes('nla disabled')) return 85;\n  if (text.includes('telnet') || text.includes('cleartext')) return 80;\n  if (text.includes('openssh 7.2')) return 70;\n  if (text.includes('tls 1.0') || text.includes('3des')) return 50;\n  if (item.severity === 'low') return 15;\n  return 40;\n}\n\n// 2. One-line remediation fixes\nfunction getOneLineFix(item) {\n  const text = `${item.finding} ${item.version}`.toLowerCase();\n  if (text.includes('vsftpd 2.3.4')) return 'Upgrade vsftpd to version 3.0.5+ immediately or replace with hardened SFTP.';\n  if (text.includes('tomcat 8.0')) return 'Upgrade Apache Tomcat to supported 10.1.x/9.0.x and disable PUT method uploads.';\n  if (text.includes('rdp')) return 'Enable Network Level Authentication (NLA) and restrict port 3389 behind a secure VPN gateway.';\n  if (text.includes('telnet')) return 'Disable the telnet daemon service and transition all remote management to SSH key authentication.';\n  if (text.includes('openssh')) return 'Update OpenSSH to >= 9.8 and disable deprecated CBC ciphers in sshd_config.';\n  if (text.includes('tls') || text.includes('3des')) return 'Disable TLS 1.0/1.1 and 3DES cipher suites; enforce TLS 1.2/1.3 with AES-GCM suites.';\n  return 'Apply latest vendor security patch and restrict port access to trusted management subnets.';\n}\n\nconst scored = findings.map(f => ({\n  ...f,\n  score: scoreExploitability(f),\n  fix: getOneLineFix(f)\n}));\n\n// Sort highest exploitability first\nscored.sort((a, b) => b.score - a.score);\n\n// Pick Top 2\nconst top1 = scored[0];\nconst top2 = scored[1] || scored[0];\n\n// Low-severity summary in a single line\nconst lowSeverity = scored.filter(f => f.severity === 'low');\nconst lowSummary = `${lowSeverity.length} low-severity finding(s) detected (${lowSeverity.map(l => l.service).join(', ')}): review banners and recursive queries during standard maintenance.`;\n\n// 3. Current IST Time (UTC + 5:30)\nconst now = new Date();\nconst istOffset = 5.5 * 60 * 60 * 1000;\nconst istDate = new Date(now.getTime() + istOffset);\nconst istTime = istDate.toISOString().replace('T', ' ').substring(0, 19) + ' IST';\n\nconst execId = $execution.id || Math.floor(1000 + Math.random() * 9000);\nconst verdict = 'CRITICAL / EXPLOITABLE';\nconst oneLineSummary = `Immediate RCE risk on ${top1.asset_ip}:${top1.port} (${top1.service}) and code execution on ${top2.asset_ip}`;\n\n// Rubric Header Format:\n// 🟣 NGP-028 | exec #<execution id> | <IST time> | <verdict / severity> | <one-line summary>\nconst header = `🟣 NGP-028 | exec #${execId} | ${istTime} | ${verdict} | ${oneLineSummary}`;\n\nconst message = `${header}\\n\\n` +\n  `🏆 *Top-2 Exploitable Findings (Ranked):*\\n\\n` +\n  `*1. [Rank 1 - ${top1.severity.toUpperCase()}] ${top1.finding}*\\n` +\n  `   • *Asset:* \\`${top1.asset_ip}:${top1.port}\\` (${top1.service} ${top1.version})\\n` +\n  `   • *Risk:* ${top1.details}\\n` +\n  `   • *One-Line Fix:* \\`${top1.fix}\\`\\n\\n` +\n  `*2. [Rank 2 - ${top2.severity.toUpperCase()}] ${top2.finding}*\\n` +\n  `   • *Asset:* \\`${top2.asset_ip}:${top2.port}\\` (${top2.service} ${top2.version})\\n` +\n  `   • *Risk:* ${top2.details}\\n` +\n  `   • *One-Line Fix:* \\`${top2.fix}\\`\\n\\n` +\n  `ℹ️ *Low-Severity Summary:*\\n${lowSummary}\\n\\n` +\n  `🛡️ *S5 Data Minimisation Proof:*\\n` +\n  `• Raw Ingested: *${input.before_count}* | Duplicates Removed: *${input.duplicates_removed}* | Sanitised: *${input.after_count}*\\n` +\n  `• *Raw IP and owner contact details were removed before ranking (last octet masked, owner name and email stripped).*\\n` +\n  `• *Masked example:* \\`${input.after_sample.asset_ip}\\``;\n\nreturn [{\n  json: {\n    telegram_text: message\n  }\n}];",
+  "Column20": "e1e71c2e-f27e-40c6-a88a-c720f2d928e8",
+  "Column21": "Exploitability Ranker",
+  "Column22": "n8n-nodes-base.code",
+  "Column23": 2,
+  "Column24": 672
+ },
+ {
+  "Column24": 304
+ },
+ {
+  "Column19": "// Sample Scan Data (10 Findings with open ports, outdated versions, weak ciphers & duplicates)\nconst raw_findings = [\n  { id: \"SEC-001\", asset_ip: \"192.168.1.45\", port: 21, service: \"FTP\", version: \"vsftpd 2.3.4\", severity: \"critical\", finding: \"Backdoored vsftpd service running\", details: \"Known smiley backdoor CVE-2011-2523 allows unauthenticated RCE.\", owner_name: \"John Doe\", owner_email: \"johndoe@corp.local\" },\n  { id: \"SEC-002\", asset_ip: \"192.168.1.72\", port: 8080, service: \"HTTP\", version: \"Apache Tomcat 8.0.32\", severity: \"high\", finding: \"Outdated Apache Tomcat server\", details: \"Arbitrary file upload & RCE vulnerability (CVE-2017-12615).\", owner_name: \"Alice Smith\", owner_email: \"asmith@corp.local\" },\n  { id: \"SEC-003\", asset_ip: \"192.168.1.18\", port: 22, service: \"SSH\", version: \"OpenSSH 7.2p2\", severity: \"high\", finding: \"Outdated SSH service version\", details: \"Vulnerable to user enumeration and legacy CBC ciphers.\", owner_name: \"DevSecOps\", owner_email: \"secops@corp.local\" },\n  { id: \"SEC-004\", asset_ip: \"192.168.1.99\", port: 3389, service: \"RDP\", version: \"Windows RDP (NLA Disabled)\", severity: \"high\", finding: \"Exposed RDP with NLA disabled\", details: \"Port open without NLA; prone to BlueKeep (CVE-2019-0708).\", owner_name: \"Admin IT\", owner_email: \"admin@corp.local\" },\n  { id: \"SEC-005\", asset_ip: \"192.168.1.110\", port: 443, service: \"HTTPS\", version: \"TLS 1.0 Enabled\", severity: \"medium\", finding: \"Deprecated TLS protocol enabled\", details: \"Vulnerable to BEAST cryptographic downgrade attacks.\", owner_name: \"SecOps\", owner_email: \"secops@corp.local\" },\n  { id: \"SEC-006\", asset_ip: \"192.168.1.110\", port: 8443, service: \"HTTPS-alt\", version: \"TLS_RSA_WITH_3DES_EDE_CBC_SHA\", severity: \"medium\", finding: \"Weak 3DES cipher suite supported\", details: \"Sweet32 collision attack on 64-bit block ciphers.\", owner_name: \"SecOps\", owner_email: \"secops@corp.local\" },\n  { id: \"SEC-007\", asset_ip: \"192.168.1.15\", port: 23, service: \"Telnet\", version: \"Linux Telnetd\", severity: \"high\", finding: \"Cleartext Telnet service exposed\", details: \"Plaintext credentials transmitted unencrypted across network.\", owner_name: \"Net Admin\", owner_email: \"net@corp.local\" },\n  { id: \"SEC-008\", asset_ip: \"192.168.1.200\", port: 80, service: \"HTTP\", version: \"nginx 1.14.0\", severity: \"low\", finding: \"Server version banner disclosure in HTTP header\", details: \"Exact nginx version disclosed in headers.\", owner_name: \"Web Admin\", owner_email: \"web@corp.local\" },\n  { id: \"SEC-009\", asset_ip: \"192.168.1.201\", port: 53, service: \"DNS\", version: \"BIND 9.11\", severity: \"low\", finding: \"DNS recursion enabled for external queries\", details: \"Open resolver risk for DNS amplification.\", owner_name: \"Net Admin\", owner_email: \"net@corp.local\" },\n  { id: \"SEC-010\", asset_ip: \"192.168.1.45\", port: 21, service: \"FTP\", version: \"vsftpd 2.3.4\", severity: \"critical\", finding: \"Backdoored vsftpd service running\", details: \"Duplicate entry of SEC-001 for deduplication testing.\", owner_name: \"John Doe\", owner_email: \"johndoe@corp.local\" }\n];\n\n// --- 1. S5 Before: Record raw items ---\nconst before_count = raw_findings.length;\nconst before_sample = raw_findings[0]; // Shows raw IP and email\n\n// --- 2. Deduplication ---\nconst seen = new Set();\nconst deduplicated = [];\nfor (const item of raw_findings) {\n  const key = `${item.asset_ip}:${item.port}:${item.finding}`;\n  if (!seen.has(key)) {\n    seen.add(key);\n    deduplicated.push(item);\n  }\n}\n\n// --- 3. S5 Data Minimisation: Mask IP last octet & strip personal emails ---\nconst after_items = deduplicated.map(item => {\n  const masked_ip = item.asset_ip.replace(/^(\\d+\\.\\d+\\.\\d+)\\.\\d+$/, '$1.xxx');\n  return {\n    id: item.id,\n    asset_ip: masked_ip,\n    port: item.port,\n    service: item.service,\n    version: item.version,\n    severity: item.severity,\n    finding: item.finding,\n    details: item.details\n    // Note: owner_name and owner_email are deliberately stripped here!\n  };\n});\n\nreturn [{\n  json: {\n    tag: \"NGP-028\",\n    before_count: before_count,\n    after_count: after_items.length,\n    duplicates_removed: before_count - after_items.length,\n    before_sample: before_sample,\n    after_sample: after_items[0],\n    clean_findings: after_items\n  }\n}];",
+  "Column20": "47f0455e-d49f-4031-bef0-7176619c2ef2",
+  "Column21": "Deduplicate & Mask IP",
+  "Column22": "n8n-nodes-base.code",
+  "Column23": 2,
+  "Column24": 448
+ },
+ {
+  "Column24": 304
+ }
+]
